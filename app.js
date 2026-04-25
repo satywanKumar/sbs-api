@@ -26,7 +26,7 @@ const connectWithDatabase = async()=>{
     }
     catch(err)
     {
-       console.log('something is wrong')
+       console.log('something is galat')
        console.log(err) 
     }
 }
