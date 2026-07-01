@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express')
+const cors = require('cors')
 const app = express()
 const userRoute = require('./Routes/user')
 const contactRoute = require('./Routes/contact')
@@ -34,6 +35,7 @@ const connectWithDatabase = async()=>{
 connectWithDatabase()
 
 
+app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded())
 
