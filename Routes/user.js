@@ -12,7 +12,7 @@ Router.post('/signup',async(req,res)=>{
         const user = await User.find({email:req.body.email})
         if(user.length > 0)
         {
-           return  res.status(200).json({
+           return  res.status(500).json({
             error:'email already registered...'
            })
         }
