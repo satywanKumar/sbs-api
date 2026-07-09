@@ -80,7 +80,7 @@ Router.get('/all-contact',async(req,res)=>{
     {
         const token = req.headers.authorization.split(" ")[1]
         const tokenData = await jwt.verify(token,process.env.SEC_KEY)
-        const allContact = await Contact.find({userId:tokenData.userId}).select("_id fullName email phone address gender userId imageUrl").populate('userId','fullName email')
+        const allContact = await Contact.find({userId:tokenData.userId}).select("_id fullName phone imageUrl").populate('userId','fullName email')
         res.status(200).json({
             contacts:allContact
         })
